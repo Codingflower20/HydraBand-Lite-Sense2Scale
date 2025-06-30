@@ -18,7 +18,7 @@ A low-cost, reusable, offline-capable hydration + heat stress monitoring band bu
 | DS18B20      | Skin surface temperature          |
 | DHT22        | Ambient temperature & humidity    |
 | ESP32        | Logic control + OTA capable       |
-| LED/Buzzer   | On-device alert system            |
+| LEDS/Buzzer  | On-device alert system            |
 
 ## Heat Stress Detection Logic
 
@@ -37,14 +37,16 @@ Pins:
 - GSR → GPIO 34
 - DS18B20 → GPIO 21
 - DHT22 → GPIO 19
-- LED → GPIO 13
-- Buzzer → GPIO 12
+- RED LED → GPIO 13
+- Blue LED/ → GPIO 12
+- Green LED/ → GPIO 14
 
 ## Alert Logic
 
 ```
 IF (GSR < 550) AND (Ambient Temp > 35°C) AND (Humidity < 40%)
 THEN → Activate LED + Buzzer alert (High Risk)
+Vibration and Buzzer for people with dissabilities this feature will be added later in future when the product gets selected finally
 ```
 
 ## TRL-8 Testing Plan
